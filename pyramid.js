@@ -1,8 +1,9 @@
-// // pyramid generator
+// pyramid generator
+// you can test different values to generate pyramid by changing the variables below ↓
 const character = "*";
 const count = 8;//contador começa em 8
 const rows = [];
-
+let inverted = false;
 
 function padRow(rowNumber, RowCount) {
     return " ".repeat(RowCount - rowNumber) + character.repeat(2 * rowNumber - 1) + " ".repeat(RowCount - rowNumber);
@@ -11,9 +12,23 @@ function padRow(rowNumber, RowCount) {
 
 // TODO:use a different type of loop
 for (let i = 1; i <= count; i++) {
-    rows.unshift(padRow(i,count))//inverted pyramid
-    rows.push(padRow(i,count))//normal pyramid
+
+    if (inverted) {
+        rows.unshift(padRow(i, count))//inverted pyramid
+    } else {
+        rows.push(padRow(i, count))//normal pyramid
+
+    }
+
 }
+
+let result = "";
+
+for (const row of rows) {
+    result = result + "\n" + row;
+}
+console.log(result)
+
 
 // differents ways to use loops("while" and "for") to generate the pyramid
 // while (rows.length  < count) {
@@ -24,11 +39,3 @@ for (let i = 1; i <= count; i++) {
 // for(let i = count;i>0;i--){
 //     rows.push(padRow(i,count))
 // }
-
-let result = "";
-
-for (const row of rows) {
-    result = result + "\n" + row;
-}
-console.log(result)
-
