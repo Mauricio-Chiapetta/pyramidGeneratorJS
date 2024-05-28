@@ -30,12 +30,14 @@ for (const row of rows) {
 console.log(result)
 
 
+
+// outras formas que o loop pode ser usado :)
 // differents ways to use loops("while" and "for") to generate the pyramid
 // while (rows.length  < count) {
 // rows.push(padRow(rows.length + 1 ,count))
 // }
 
-// upsidedown pyramid
+// upsidedown pyramid(inverted)
 // for(let i = count;i>0;i--){
 //     rows.push(padRow(i,count))
 // }
